@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ScpInfo {
 	
+	private String serverName;
 	private String serverId;
 	private String ip;
     private int port;
@@ -68,8 +69,16 @@ public class ScpInfo {
 		serverInfos = new ArrayList<>();
 	}
 	
-	public ScpInfo(String serverId, String IP, int port, String username, String passward) {
-	    this.serverId = serverId;
+	public String getServerName() {
+		return serverName;
+	}
+
+	public void setServerName(String serverName) {
+		this.serverName = serverName;
+	}
+	
+	public ScpInfo(String serverName, String IP, int port, String username, String passward) {
+	    this.serverName = serverName;
 		this.ip = IP;
 	    this.port = port;
 	    this.username = username;

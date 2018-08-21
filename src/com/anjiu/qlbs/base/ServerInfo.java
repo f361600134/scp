@@ -49,8 +49,7 @@ public class ServerInfo {
 	
 	@Override
 	public String toString() {
-		return "ServerInfo [serverPath=" + serverPath + ", doBackUp=" + doBackUp + ", doShutdown=" + doShutdown
-				+ ", doStartUp=" + doStartUp + "]";
+		return "ServerInfo [serverPath=" + serverPath + "]";
 	}
 
 }

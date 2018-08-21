@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="lib/logback-core-1.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.21.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/guava-20.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

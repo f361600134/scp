@@ -1,30 +1,33 @@
 package com.anjiu.qlbs;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.dom4j.DocumentException;
+
 import com.anjiu.qlbs.base.ScpInfo;
 import com.anjiu.qlbs.base.ServerInfo;
 import com.anjiu.qlbs.util.ScpLog;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
 
 public class ScpConstant {
 	
-	public static class Filter implements FileFilter{
-		@Override
-		public boolean accept(File file) {
-			return false;
-		}
-		
-	}
-	
 	private static String XMLPATH = "res/auth.xml";
-	private static String commondSource = "upload";
-	private static String commonRemoteDir = "";
-	private static List<ScpInfo> scpInfos;
+	public static String commondSource = "upload";
+	public static String commonRemoteDir = "";
+	public static File uploadFile;
+//	public static List<ScpInfo> scpInfos;
+	/**
+	 * key: ip
+	 * value: ScpInfo
+	 */
+	public static Multimap<String, ScpInfo> scpInfoMap;
 	
 	/**
 	 * 如果是默认路径, 寻找到路径下最新的文件
@@ -32,13 +35,25 @@ public class ScpConstant {
 	 */
 	public static void loadUpload(){
 		File file = new File(commondSource);
-		for (File f : file.listFiles()) {
-			
+		if(file.isFile()) {
+			uploadFile = file;
+			return;
+		};
+		if (file.isDirectory()) {
+			for (File f : file.listFiles()) {
+				ScpLog.info("f.name:{}", f.getName());
+				//System.out.println("筛选出指定文件");
+				//uploadFile=xx;
+			}
+		}
+		if(uploadFile==null){
+			ScpLog.error("uploadFile is null, exit the system.");
+			System.exit(0);
 		}
 	}
 	
 	public static void main(String[] args) {
-//		loadFile();
+		loadFile();
 		loadUpload();
 	}
 	
@@ -71,10 +86,12 @@ public class ScpConstant {
 	        ServerInfo serverInfo = null;
 	        org.dom4j.Element ele = null;
 	        List<ServerInfo> serverInfos = null;
-	        List<ScpInfo> tempScpInfos = new ArrayList<>();
+	        //List<ScpInfo> tempScpInfos = new ArrayList<>();
+	        Multimap<String, ScpInfo> tempmultimap = ArrayListMultimap.create();
 	        
 	        for (Iterator<?> i = root.elementIterator("scp"); i.hasNext();) {
 	        	foo = (org.dom4j.Element) i.next(); 
+	        	String serverName = foo.elementText("serverName");
 	        	String ip = foo.elementText("ip");
 				int port = Integer.parseInt(foo.elementText("port"));
 				String username = foo.elementText("username");
@@ -100,14 +117,14 @@ public class ScpConstant {
 					serverInfos.add(serverInfo);
 				}
 				scpInfo.setServerInfos(serverInfos);
-				tempScpInfos.add(scpInfo);
+				tempmultimap.put(serverName,scpInfo);
 			}
-	        scpInfos = tempScpInfos;
+	        scpInfoMap = tempmultimap;
 	        
 	        ScpLog.info("===============配置信息=================");
 	        ScpLog.info("commondSource:{}",commonRemoteDir);
 	        ScpLog.info("commondSource:{}", commondSource);
-			ScpLog.info("scpInfos:{}", scpInfos);
+			ScpLog.info("scpInfoMap:{}", scpInfoMap);
 			 ScpLog.info("===============配置信息=================");
 		} catch (DocumentException e) {
 			e.printStackTrace();

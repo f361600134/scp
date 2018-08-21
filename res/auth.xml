@@ -16,7 +16,7 @@
 	remoteDir: 可以自己定义目标服务器文件上传位置
 	-->
 	<scp>
-		<serverId>1,2,3</serverId>
+		<serverName>wzyd</serverName>
 		<ip>192.168.6.139</ip>
 		<port>20089</port>
 		<username>root</username>
@@ -26,6 +26,20 @@
 			<server doBackup="" doShutdown="false" doStart="">/data/webapps/ddlhyy_android/morningGlory_s1/</server>
 			<server>/data/webapps/ddlhyy_android/morningGlory_s2/</server>
 			<server>/data/webapps/ddlhyy_android/morningGlory_s3/</server>
+		</servers>
+	</scp>
+	
+	<scp>
+		<serverName>wzyd</serverName>
+		<ip>192.168.6.138</ip>
+		<port>20089</port>
+		<username>root</username>
+		<password>wzyd508</password>
+		<remoteDir></remoteDir>
+		<servers> 
+			<server>/data/webapps/ddlhyy_android/morningGlory_s4/</server>
+			<server>/data/webapps/ddlhyy_android/morningGlory_s5/</server>
+			<server>/data/webapps/ddlhyy_android/morningGlory_s6/</server>
 		</servers>
 	</scp>
 	
