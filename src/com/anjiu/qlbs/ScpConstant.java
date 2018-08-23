@@ -19,9 +19,10 @@ public class ScpConstant {
 	
 	private static String XMLPATH = "res/auth.xml";
 	public static String commondSource = "upload";
+	public static String downloadDir = "download";
 	public static String commonRemoteDir = "";
 	public static File uploadFile;
-//	public static List<ScpInfo> scpInfos;
+
 	/**
 	 * key: serverid value: ScpInfo
 	 */
@@ -60,76 +61,15 @@ public class ScpConstant {
 		}
 	}
 	
-	public static void main(String[] args) {
-		loadFile();
-		loadUpload();
-	}
-	
 	public static void loadFile(){
-		File f = new File(XMLPATH);  
-        org.dom4j.io.SAXReader reader = new org.dom4j.io.SAXReader();  
-        org.dom4j.Document doc;
 		try {
-			doc = reader.read(f);
+			File f = new File(XMLPATH);  
+			org.dom4j.io.SAXReader reader = new org.dom4j.io.SAXReader();  
+			org.dom4j.Document doc = reader.read(f);
 			org.dom4j.Element root = doc.getRootElement();  
-	        org.dom4j.Element foo;
-	        //解析common
-	        for (Iterator<?> i = root.elementIterator("common"); i.hasNext();) {
-	             foo = (org.dom4j.Element) i.next();
-	             String source = foo.elementText("source");
-	             if (source != null && !source.isEmpty())
-	            	 commondSource = source;
-	             
-	             //校验目标上产路径
-	             commonRemoteDir = foo.elementText("commonRemoteDir");
-	             if (commonRemoteDir == null || commonRemoteDir.isEmpty())
-	             {
-	            	 ScpLog.error("加载配置文件出错, targetBasePath:{}", commonRemoteDir);
-	            	 System.exit(0);
-	             }
-			}
-	        
-	        //解析server
-	        ScpInfo scpInfo = null;
-	        ServerInfo serverInfo = null;
-	        org.dom4j.Element ele = null;
-	        List<ServerInfo> serverInfos = null;
-	        //List<ScpInfo> tempScpInfos = new ArrayList<>();
-	        Multimap<String, ScpInfo> tempmultimap = ArrayListMultimap.create();
-	        
-	        for (Iterator<?> i = root.elementIterator("scp"); i.hasNext();) {
-	        	foo = (org.dom4j.Element) i.next(); 
-	        	
-	        	String serverId = foo.elementText("serverId");
-	        	String serverName = foo.elementText("serverName");
-	        	String ip = foo.elementText("ip");
-				int port = Integer.parseInt(foo.elementText("port"));
-				String username = foo.elementText("username");
-				String password = foo.elementText("password");
-				String remoteDir = foo.elementText("remoteDir");
-				scpInfo = new ScpInfo(serverId, serverName, ip, port, username, password, remoteDir);
-				//解析服务器组
-				List<?> list = foo.element("servers").elements();
-				serverInfos = new ArrayList<>();
-				for (Object obj : list) {
-					ele = (org.dom4j.Element) obj;
-					String server = ele.getStringValue();
-					String doShutdown = ele.attributeValue("doShutdown");
-					String doBackup = ele.attributeValue("doBackup");
-					String doStart = ele.attributeValue("doStart");
-					serverInfo = new ServerInfo(server);
-					if (doShutdown != null && doShutdown.equals("false"))
-						serverInfo.setDoShutdown(false);
-					if (doShutdown != null && doBackup.equals("false"))
-						serverInfo.setDoBackUp(false);
-					if (doShutdown != null && doStart.equals("false"))
-						serverInfo.setDoStartUp(false);
-					serverInfos.add(serverInfo);
-				}
-				scpInfo.setServerInfos(serverInfos);
-				tempmultimap.put(serverId, scpInfo);
-			}
-	        scpInfoMap = tempmultimap;
+			
+	        loadCommon(root);
+	        loadServers(root);
 	        
 	        ScpLog.info("===============配置信息=================");
 	        ScpLog.info("commondSource:{}",commonRemoteDir);
@@ -142,5 +82,92 @@ public class ScpConstant {
 		}  
 		
 	}
+
+	/**
+	 * 解析服务器们
+	 * @param root
+	 */
+	private static void loadServers(org.dom4j.Element root) {
+		org.dom4j.Element foo;
+		//解析server
+		ScpInfo scpInfo = null;
+		ServerInfo serverInfo = null;
+		org.dom4j.Element ele = null;
+		List<ServerInfo> serverInfos = null;
+		//List<ScpInfo> tempScpInfos = new ArrayList<>();
+		Multimap<String, ScpInfo> tempmultimap = ArrayListMultimap.create();
+		
+		for (Iterator<?> i = root.elementIterator("scp"); i.hasNext();) {
+			foo = (org.dom4j.Element) i.next(); 
+			
+			String serverId = foo.elementText("serverId");
+			String serverName = foo.elementText("serverName");
+			String ip = foo.elementText("ip");
+			int port = Integer.parseInt(foo.elementText("port"));
+			String username = foo.elementText("username");
+			String password = foo.elementText("password");
+			String remoteDir = checkPath(foo.elementText("remoteDir"));
+			scpInfo = new ScpInfo(serverId, serverName, ip, port, username, password, remoteDir);
+			//解析服务器组
+			List<?> list = foo.element("servers").elements();
+			serverInfos = new ArrayList<>();
+			for (Object obj : list) {
+				ele = (org.dom4j.Element) obj;
+				String server = checkPath(ele.getStringValue());
+				String doShutdown = ele.attributeValue("doShutdown");
+				String doBackup = ele.attributeValue("doBackup");
+				String doStart = ele.attributeValue("doStart");
+				serverInfo = new ServerInfo(server);
+				if (doShutdown != null && doShutdown.equals("false"))
+					serverInfo.setDoShutdown(false);
+				if (doShutdown != null && doBackup.equals("false"))
+					serverInfo.setDoBackUp(false);
+				if (doShutdown != null && doStart.equals("false"))
+					serverInfo.setDoStartUp(false);
+				serverInfos.add(serverInfo);
+			}
+			scpInfo.setServerInfos(serverInfos);
+			tempmultimap.put(serverId, scpInfo);
+		}
+		scpInfoMap = tempmultimap;
+	}
+
+	/**
+	 * 解析公共配置
+	 * @param root
+	 */
+	private static void loadCommon(org.dom4j.Element root) {
+		org.dom4j.Element foo;
+		//解析common
+		for (Iterator<?> i = root.elementIterator("common"); i.hasNext();) {
+		     foo = (org.dom4j.Element) i.next();
+		     String source = foo.elementText("source");
+		     if (source != null && !source.isEmpty())
+		    	 commondSource = source;
+		     
+		     //校验目标上产路径
+		     commonRemoteDir = foo.elementText("commonRemoteDir");
+		     if (commonRemoteDir == null || commonRemoteDir.isEmpty())
+		     {
+		    	 ScpLog.error("加载配置文件出错, targetBasePath:{}", commonRemoteDir);
+		    	 System.exit(0);
+		     }
+		     commonRemoteDir = checkPath(commonRemoteDir);
+		}
+	}
+	
+	/**
+	 * 对path进行校验, 如果目录不是以"/"结尾,则填补一个"/"
+	 * @return
+	 */
+	private static String checkPath(String dirPath){
+		int len = dirPath.length();
+		int index = dirPath.lastIndexOf("/");
+		//下标从0开始, 长度从1开始, 所以比较下标需要+1, 或者
+		if (index+1 != len) {
+			dirPath += "/";
+		}
+		return dirPath;
+	} 
 	
 }

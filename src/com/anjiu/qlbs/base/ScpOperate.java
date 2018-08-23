@@ -94,33 +94,34 @@ public enum ScpOperate {
 			}
 			String command = Command.cd(downloadPath);
 			//组装命令zip
-			String source = "", path = null;
-			//zip -r log.zip path1.log path2.log
+			String source = "";
 			for (ServerInfo serverInfo : scpInfo.getServerInfos()) {
 				//组装下载log日志
-				path = serverInfo.getServerPath();
-				int endIndex = path.lastIndexOf("/");
-				int beginIndex = path.lastIndexOf("/", endIndex-1);
-				String fileName = path.substring(beginIndex+1, endIndex);
-				source += "../"+fileName+"/start.log ";
-				//组装下载后的路径
+				source += "../"+serverInfo.getServerName()+"/start.log ";
 			}
-			//合成
 			command += Command.zip("log", source);
 			//运行压缩日志文件
 			ScpAssist.runCommand(conn, command);
 			//运行下载日志
-			String target = "E:/a/";
-			ScpAssist.getFile(conn, downloadPath+"/log.zip", target);
+			ScpAssist.getFile(conn, downloadPath+"/log.zip", ScpConstant.downloadDir);
 		}
 	},
 	/**备份原服务器*/
 	BACKUP(7, "备份原服务器"){
-		/*
-		 * /home/Jeremy/gameserver/morningGlory_s1/
-		 * newPath= /home/Jeremy/gameserver/
-		 * morningGlory_s1
-		 */
+		@Override
+		public void exeCommand(ScpInfo scpInfo) {
+			Connection conn = ScpAssist.getConn(scpInfo);
+			String command = null;
+			for (ServerInfo serverInfo : scpInfo.getServerInfos()) {
+				//组装命令
+				command = Command.cd(serverInfo.getServerDir());
+				command += Command.zip(serverInfo.getServerName());
+				//运行
+				ScpAssist.runCommand(conn, command);
+			}
+		}
+	},
+	SHOWLOG(8, "查看异常信息"){
 		@Override
 		public void exeCommand(ScpInfo scpInfo) {
 			Connection conn = ScpAssist.getConn(scpInfo);

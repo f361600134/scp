@@ -86,8 +86,8 @@ public class ScpMain {
          	for (ScpInfo scpInfo : list) {
          		scpOperate.exeCommand(scpInfo);
 			}
-        }while(!putword.equals("*"));   // 如果输入的值不是#就继续输入
-        System.out.println("你输入了\"*\"，程序已经退出！");
+        }while(!putword.equals("-1"));   // 如果输入的值不是-1就继续输入
+        System.out.println("你输入了\"-1\"，程序已经退出！");
         input.close(); // 关闭资源
 	}
 

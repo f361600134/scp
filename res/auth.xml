@@ -11,23 +11,23 @@
 	</common>
 	
 	<!-- 
-	默认: 备份, 更新, 开服, 状态都为true, 可以设置为不开启false
+	默认: 备份, 更新, 开服, 状态都为true, 可以设置为不开启false..有空做
 	remoteDir: 可以自己定义目标服务器文件上传位置
 	-->
-<!-- 	<scp> -->
-<!-- 		<serverId>s139</serverId> -->
-<!-- 		<serverName>内网139</serverName> -->
-<!-- 		<ip>192.168.6.139</ip> -->
-<!-- 		<port>20089</port> -->
-<!-- 		<username>root</username> -->
-<!-- 		<password>wzyd508</password> -->
-<!-- 		<remoteDir></remoteDir> -->
-<!-- 		<servers>  -->
-<!-- 			<server doBackup="" doShutdown="false" doStart="">/data/webapps/ddlhyy_android/morningGlory_s1/</server> -->
-<!-- 			<server>/data/webapps/ddlhyy_android/morningGlory_s1/</server> -->
-<!-- 			<server>/data/webapps/ddlhyy_android/morningGlory_s3/</server> -->
-<!-- 		</servers> -->
-<!-- 	</scp> -->
+	<scp>
+		<serverId>s139</serverId>
+		<serverName>内网139</serverName>
+		<ip>192.168.6.139</ip>
+		<port>20089</port>
+		<username>root</username>
+		<password>wzyd508</password>
+		<remoteDir></remoteDir>
+		<servers> 
+			<server doBackup="" doShutdown="" doStart="">/data/webapps/ddlhyy_android/morningGlory_s1/</server>
+			<server>/data/webapps/ddlhyy_android/morningGlory_s1/</server>
+			<server>/data/webapps/ddlhyy_android/morningGlory_s3/</server>
+		</servers>
+	</scp>
 	
 	<scp>
 		<serverId>s139</serverId>
@@ -38,8 +38,7 @@
 		<password>wzyd508</password>
 		<remoteDir>/home/Jeremy/gameserver/newer/</remoteDir>
 		<servers> 
-			<server>/home/Jeremy/gameserver/morningGlory_s1/</server>
-			<server>/home/Jeremy/gameserver/morningGlory_s2/</server>
+			<server>/data/webapps/ddlhyy_android/morningGlory_s2/</server>
 		</servers>
 	</scp>
 	
@@ -55,6 +54,5 @@
 			<server>/data/webapps/ddlhyy_android/morningGlory_s2/</server>
 		</servers>
 	</scp>
-	
 	
 </mapping>
