@@ -51,5 +51,5 @@ public class ServerInfo {
 	public String toString() {
 		return "ServerInfo [serverPath=" + serverPath + "]";
 	}
-
+	
 }

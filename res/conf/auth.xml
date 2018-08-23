@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	
+	<!-- 
+	公共配置: 默认是在upload文件夹下, 可以更改上传路径
+	上传的目标路径
+	 -->
+	<common>
+		<source>E:/a/server.zip</source>
+		<commonRemoteDir>/data/webapps/ddlhyy_android/newer</commonRemoteDir>
+	</common>
+	
+	<!-- 
+	默认: 备份, 更新, 开服, 状态都为true, 可以设置为不开启false
+	remoteDir: 可以自己定义目标服务器文件上传位置
+	-->
+<!-- 	<scp> -->
+<!-- 		<serverId>s139</serverId> -->
+<!-- 		<serverName>内网139</serverName> -->
+<!-- 		<ip>192.168.6.139</ip> -->
+<!-- 		<port>20089</port> -->
+<!-- 		<username>root</username> -->
+<!-- 		<password>wzyd508</password> -->
+<!-- 		<remoteDir></remoteDir> -->
+<!-- 		<servers>  -->
+<!-- 			<server doBackup="" doShutdown="false" doStart="">/data/webapps/ddlhyy_android/morningGlory_s1/</server> -->
+<!-- 			<server>/data/webapps/ddlhyy_android/morningGlory_s1/</server> -->
+<!-- 			<server>/data/webapps/ddlhyy_android/morningGlory_s3/</server> -->
+<!-- 		</servers> -->
+<!-- 	</scp> -->
+	
+	<scp>
+		<serverId>s139</serverId>
+		<serverName>内网139</serverName>
+		<ip>192.168.6.139</ip>
+		<port>20089</port>
+		<username>root</username>
+		<password>wzyd508</password>
+		<remoteDir>/home/Jeremy/gameserver/newer</remoteDir>
+		<servers> 
+			<server>/home/Jeremy/gameserver/morningGlory_s1</server>
+			<server>/home/Jeremy/gameserver/morningGlory_s2</server>
+		</servers>
+	</scp>
+	
+	<scp>
+		<serverId>s97</serverId>
+		<serverName>阿里97</serverName>
+		<ip>192.168.6.139</ip>
+		<port>20089</port>
+		<username>root</username>
+		<password>wzyd508</password>
+		<remoteDir></remoteDir>
+		<servers> 
+			<server>/data/webapps/ddlhyy_android/morningGlory_s2</server>
+		</servers>
+	</scp>
+	
+	
+</mapping>

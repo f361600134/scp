@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	
+	<!-- 
+	公共配置: 默认是在upload文件夹下, 可以更改上传路径
+	上传的目标路径
+	 -->
+	<common>
+		<source>E:/a/morningGlory_sample.zip</source>
+		<targetbasePath>/data/webapps/ddlhyy_android/newer/</targetbasePath>
+	</common>
+	
+	<!--王者服1,2,11 -->
+	<scp>
+		<serverId>1,2,11</serverId>
+		<ip>106.14.114.232</ip>
+		<port>22</port>
+		<username>root</username>
+		<password>@Wzcs!#$*</password>
+		<properties>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s1</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s2</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s11</property>
+		</properties>
+	</scp>
+	
+	<!--王者服3,8,10 -->
+	<scp>
+		<serverId>3,8,10</serverId>
+		<ip>47.100.21.19</ip>
+		<port>22</port>
+		<username>root</username>
+		<password>@Wzcs!#$*</password>
+		<properties>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s3</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s8</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s10</property>
+		</properties>
+	</scp>
+	
+	<!--王者服5,7,9,12 -->
+	<scp>
+		<serverId>5,7,9,12</serverId>
+		<ip>101.132.47.203</ip>
+		<port>22</port>
+		<username>root</username>
+		<password>@Wzcs!#$*</password>
+		<properties>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s5</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s7</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s9</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s12</property>
+		</properties>
+	</scp>
+	
+	<!--烈焰服 -->
+	<scp>
+		<serverId>1,2</serverId>
+		<ip>47.100.58.171</ip>
+		<port>22</port>
+		<username>root</username>
+		<password>@Wzcs!#$*</password>
+		<properties>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s1</property>
+			<property>/data/webapps/ddlhyy_android/morningGlory_s2</property>
+		</properties>
+	</scp>
+	
+</mapping>

@@ -58,7 +58,7 @@ public class ScpAssist {
 			        break;
 			    sb.append(line).append("\n");
 			}
-			ScpLog.info("result:,{}", sess.getExitStatus());
+			ScpLog.info("command:{},result:,{}",command, sess.getExitStatus());
 			br.close();
 			sess.close();
 		}catch (Exception e) {
@@ -68,7 +68,7 @@ public class ScpAssist {
 		return sb.toString();
 	}
 	
-	public static void runCommand2(Connection conn,String ...command) {
+	public static void runCommand2(final Connection conn,final String ...command) {
 		 new Thread(new Runnable() {
 	        public void run() {
 					Session session;
@@ -109,7 +109,7 @@ public class ScpAssist {
 	    }}).start();
 	}
 	
-	public static void runCommand3(Connection conn,String ...command) {
+	public static void runCommand3(final Connection conn,final String ...command) {
 		 new Thread(new Runnable() {
 		        public void run() {
 						Session session;
@@ -153,10 +153,11 @@ public class ScpAssist {
 		    }}).start();
 	}
 	
-	public static void putFile(Connection conn, String source, String target) {
+	public static void putFile(final Connection conn, String source, String target) {
 	    try {
 	        SCPClient client = new SCPClient(conn);
 	        client.put(source, target);
+	        ScpLog.info("源文件source:{}, 目标文件target{}", source, target);
 	    } catch (IOException ex) {
 	        ex.printStackTrace();
 	        conn.close();
@@ -176,6 +177,7 @@ public class ScpAssist {
 		try{
 			SCPClient client = new SCPClient(conn);
 			client.get(remote, localDir);
+			ScpLog.info("源文件remote:{}, 目标文件localDir{}", remote, localDir);
 		} catch (IOException ex) {
 			ex.printStackTrace();
 			conn.close();

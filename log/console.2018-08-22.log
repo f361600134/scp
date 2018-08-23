@@ -1,0 +1,14 @@
+2018-08-22 18:17:57.187 [INFO ] - ===============配置信息=================
+2018-08-22 18:17:57.190 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer
+2018-08-22 18:17:57.190 [INFO ] - commondSource:E:/a/server.zip
+2018-08-22 18:17:57.190 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2]]]], s139=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/home/Jeremy/gameserver/morningGlory_s1], ServerInfo [serverPath=/home/Jeremy/gameserver/morningGlory_s2]]]]}
+2018-08-22 18:17:57.191 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-22 18:17:57.191 [INFO ] - ===============配置信息=================
+2018-08-22 18:26:55.622 [INFO ] - ===============配置信息=================
+2018-08-22 18:26:55.627 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer
+2018-08-22 18:26:55.627 [INFO ] - commondSource:E:/a/server.zip
+2018-08-22 18:26:55.627 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2]]]], s139=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/home/Jeremy/gameserver/morningGlory_s1], ServerInfo [serverPath=/home/Jeremy/gameserver/morningGlory_s2]]]]}
+2018-08-22 18:26:55.628 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-22 18:26:55.628 [INFO ] - ===============配置信息=================
+2018-08-22 18:27:20.248 [INFO ] - command:cd /home/Jeremy/gameserver/;zip -r morningGlory_s1_20180822.zip morningGlory_s1;,result:,0
+2018-08-22 18:27:21.883 [INFO ] - command:cd /home/Jeremy/gameserver/;zip -r morningGlory_s2_20180822.zip morningGlory_s2;,result:,0

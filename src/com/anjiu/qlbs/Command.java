@@ -11,7 +11,7 @@ public class Command {
 	 * @return
 	 */
 	public static String cd(String path){
-		return "cd " + path + "\n";
+		return "cd " + path + ";";
 	}
 	
 	/**
@@ -20,35 +20,33 @@ public class Command {
 	 * @return
 	 */
 	public static String cp(String path){
-		return "cp " + path + "\n";
+		return "cp " + path + ";";
+	}
+	
+	
+	/**
+	 * 压缩指定文件作为备份
+	 * 会根据当前日期备份源文件
+	 * @param command
+	 * @return
+	 */
+	public static String zip(String fileName, String ...files){
+		String filePath = "";
+		for (String file : files) {
+			filePath += file + " ";
+		}
+		return "zip -r "+fileName+".zip "+filePath+";";
 	}
 	
 	/**
 	 * 压缩指定文件作为备份
+	 * 会根据当前日期备份源文件
 	 * @param command
 	 * @return
 	 */
-	public static String zip(){
-		return "zip -r backup.zip classes lib \n";
-	}
-	
-	/**
-	 * 压缩指定文件作为备份
-	 * @param command
-	 * @return
-	 */
-	public static String zipp(String fileName){
-		String newName = fileName +"_"+ new SimpleDateFormat("yyyyMMdd").format(new Date());
-		return "zip -r ../"+newName+".zip ../"+fileName;
-	}
-	
-	/**
-	 * 压缩指定文件作为备份
-	 * @param command
-	 * @return
-	 */
-	public static String zip(String path){
-		return "zip -r "+path+"/backup.zip "+path+"/classes "+path+"/lib \n";
+	public static String zip(String fileName){
+		String newName = fileName +"_"+ new SimpleDateFormat("yyyyMMdd").format(new Date())+".zip ";
+		return "zip -r "+newName+fileName+";";
 	}
 	
 	/**
@@ -58,8 +56,15 @@ public class Command {
 	 */
 	public static String unzip(String source, String target){
 		StringBuilder sb = new StringBuilder("unzip -o ");
-		sb.append(source).append(" -d ").append(target).append(" \n");
+		sb.append(source).append(" -d ").append(target).append(" ;");
 		return sb.toString();
+	}
+	
+	public static void main(String[] args) {
+//		String path = "/home/Jeremy/gameserver/morningGlory_s1/";
+//		String npath = path.replaceAll("\\/", "");
+//		System.out.println(path.length()-npath.length());
+		System.out.println(zip("a", "b", "c"));
 	}
 	
 	/**
@@ -68,7 +73,7 @@ public class Command {
 	 * @return
 	 */
 	public static String start(){
-		return "sh runner.sh \n";
+		return "sh runner.sh ;";
 	}
 	
 	/**
@@ -76,8 +81,8 @@ public class Command {
 	 * @param command
 	 * @return
 	 */
-	public static String start(String path){
-		return "sh "+path+"runner.sh \n";
+	public static String startup(String path){
+		return "sh "+path+"runner.sh ;";
 	}
 	
 	/**
@@ -85,8 +90,8 @@ public class Command {
 	 * @param command
 	 * @return
 	 */
-	public static String stop(String path){
-		return "sh "+path+"stop.sh y\n";
+	public static String shutdown(String path){
+		return "sh "+path+"stop.sh y ;";
 	}
 	
 	

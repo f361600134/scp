@@ -2,7 +2,6 @@ package com.anjiu.qlbs;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -13,8 +12,8 @@ import com.anjiu.qlbs.base.ScpInfo;
 import com.anjiu.qlbs.base.ServerInfo;
 import com.anjiu.qlbs.util.ScpLog;
 import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
-import com.google.common.collect.Multimaps;
 
 public class ScpConstant {
 	
@@ -24,10 +23,19 @@ public class ScpConstant {
 	public static File uploadFile;
 //	public static List<ScpInfo> scpInfos;
 	/**
-	 * key: ip
-	 * value: ScpInfo
+	 * key: serverid value: ScpInfo
 	 */
 	public static Multimap<String, ScpInfo> scpInfoMap;
+	
+	public static Map<Integer, String> getShows(){
+		Map<Integer, String> result = Maps.newHashMap();
+		int count = 1;
+		for (String str : scpInfoMap.keySet()) {
+			result.put(count, str);
+			count++;
+		}
+		return result;
+	}
 	
 	/**
 	 * 如果是默认路径, 寻找到路径下最新的文件
@@ -91,13 +99,15 @@ public class ScpConstant {
 	        
 	        for (Iterator<?> i = root.elementIterator("scp"); i.hasNext();) {
 	        	foo = (org.dom4j.Element) i.next(); 
+	        	
+	        	String serverId = foo.elementText("serverId");
 	        	String serverName = foo.elementText("serverName");
 	        	String ip = foo.elementText("ip");
 				int port = Integer.parseInt(foo.elementText("port"));
 				String username = foo.elementText("username");
 				String password = foo.elementText("password");
 				String remoteDir = foo.elementText("remoteDir");
-				scpInfo = new ScpInfo(ip, port, username, password, remoteDir);
+				scpInfo = new ScpInfo(serverId, serverName, ip, port, username, password, remoteDir);
 				//解析服务器组
 				List<?> list = foo.element("servers").elements();
 				serverInfos = new ArrayList<>();
@@ -117,7 +127,7 @@ public class ScpConstant {
 					serverInfos.add(serverInfo);
 				}
 				scpInfo.setServerInfos(serverInfos);
-				tempmultimap.put(serverName,scpInfo);
+				tempmultimap.put(serverId, scpInfo);
 			}
 	        scpInfoMap = tempmultimap;
 	        
@@ -125,7 +135,8 @@ public class ScpConstant {
 	        ScpLog.info("commondSource:{}",commonRemoteDir);
 	        ScpLog.info("commondSource:{}", commondSource);
 			ScpLog.info("scpInfoMap:{}", scpInfoMap);
-			 ScpLog.info("===============配置信息=================");
+			ScpLog.info("scpInfoMap:{}", scpInfoMap.keySet());
+			ScpLog.info("===============配置信息=================");
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}  
