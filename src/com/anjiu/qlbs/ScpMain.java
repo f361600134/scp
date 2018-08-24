@@ -11,8 +11,7 @@ public class ScpMain {
 	
 	public static void main(String[] args) {
 		//加载数据
-		ScpConstant.loadFile();
-		ScpConstant.loadUpload();
+		ScpConstant.init();
 		openConsole();
 	}
 	
@@ -91,5 +90,70 @@ public class ScpMain {
         input.close(); // 关闭资源
 	}
 
+	/*
+	 * 这部分代码可以改进
+	 */
+	public static void openConsole2(){
+		//控制台窗口命令
+		Scanner input = new Scanner(System.in);
+        String putword = null;// 记录输入的字符串
+        while(input.hasNext())   // 如果输入的值不是-1就继续输入
+        {
+        	//进入第二步骤可返回
+            putword = input.next(); // 等待输入值
+            if (putword.equals("0")) {
+            	first = true;
+            	second = true;
+            	System.out.println("返回上一层");
+            	continue;
+			}
+            
+            //退出
+            if (putword.equals("*")) {
+            	break;
+			}
+            
+        	//第一步骤
+        	if (first) {
+        		Map<Integer, String> map= ScpConstant.getShows();
+            	for (Integer key : map.keySet()) {
+            		System.out.println(key+". "+map.get(key)+"操作");
+        		}
+            	putword = input.next(); // 等待输入值
+                String val = map.get(Integer.parseInt(putword));
+                if (val == null) {
+                	 System.out.println("没有这个选项");
+                	 continue;
+    			}
+                //打印所持有的服务器
+                Collection<ScpInfo> list = ScpConstant.scpInfoMap.get(val);
+                for (ScpInfo scpInfo : list) {
+					System.out.println("scpInfo:"+scpInfo);
+				}
+                tempServerName = val;
+                first = false;
+			}
+        	//第二步骤
+            if (second) {
+            	for (ScpOperate scpOperate : ScpOperate.values()) {
+                 	System.out.println(scpOperate.getType()+". "+scpOperate.getName()+"操作");
+     			}
+            	second = false;
+			}
+            
+            //最终操作
+         	ScpOperate scpOperate = ScpOperate.getScpType(Integer.parseInt(putword));
+         	if (scpOperate == null) {
+         		System.out.println("没有这个选项");
+         		continue;
+ 			}
+         	Collection<ScpInfo> list = ScpConstant.scpInfoMap.get(tempServerName);
+         	for (ScpInfo scpInfo : list) {
+         		scpOperate.exeCommand(scpInfo);
+			}
+        }
+        System.out.println("你输入了\"-1\"，程序已经退出！");
+        input.close(); // 关闭资源
+	}
 	
 }

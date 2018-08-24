@@ -24,7 +24,6 @@
 		<remoteDir></remoteDir>
 		<servers> 
 			<server doBackup="" doShutdown="" doStart="">/data/webapps/ddlhyy_android/morningGlory_s1/</server>
-			<server>/data/webapps/ddlhyy_android/morningGlory_s1/</server>
 			<server>/data/webapps/ddlhyy_android/morningGlory_s3/</server>
 		</servers>
 	</scp>
@@ -36,7 +35,7 @@
 		<port>20089</port>
 		<username>root</username>
 		<password>wzyd508</password>
-		<remoteDir>/home/Jeremy/gameserver/newer/</remoteDir>
+		<remoteDir></remoteDir>
 		<servers> 
 			<server>/data/webapps/ddlhyy_android/morningGlory_s2/</server>
 		</servers>

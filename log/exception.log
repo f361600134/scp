@@ -1,1 +1,14 @@
 2018-08-23 14:42:55.682 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 16:50:29.307 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:11:52.358 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:12:04.996 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:12:34.391 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:13:06.234 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:19:06.162 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:19:34.547 [ERROR] - uploadFile is null, exit the system.
+2018-08-23 17:51:29.791 [ERROR] - 执行超时, 服务器启动有误, 请进入相应的服务器查看, result:ucc: /data/webapps/ddlhyy_android/morningGlory_s1 - Game Server Version V0.5.0.27 (Time cost: 9s)
+
+2018-08-23 17:51:46.164 [ERROR] - 执行超时, 服务器启动有误, 请进入相应的服务器查看, result:ucc: /data/webapps/ddlhyy_android/morningGlory_s3 - Game Server Version V0.5.0.27 (Time cost: 15s)
+
+2018-08-23 17:51:46.899 [ERROR] - 执行超时, 服务器启动有误, 请进入相应的服务器查看, result:ucc: /data/webapps/ddlhyy_android/morningGlory_s2 - Game Server Version V0.5.0.27 (Time cost: 0s)
+
