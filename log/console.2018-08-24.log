@@ -1,0 +1,36 @@
+2018-08-24 15:12:06.379 [INFO ] - ===============配置信息=================
+2018-08-24 15:12:06.382 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-24 15:12:06.382 [INFO ] - commondSource:E:/a/server.zip
+2018-08-24 15:12:06.382 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-24 15:12:06.382 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-24 15:12:06.383 [INFO ] - ===============配置信息=================
+2018-08-24 15:12:11.716 [INFO ] - command:cd /data/webapps/ddlhyy_android;sh serverState.sh;,result:,null
+2018-08-24 15:12:11.783 [INFO ] - command:cd /data/webapps/ddlhyy_android;sh serverState.sh;,result:,127
+2018-08-24 15:12:12.101 [INFO ] - command:cd /data/webapps/ddlhyy_android;sh serverState.sh;,result:,null
+2018-08-24 15:14:33.039 [INFO ] - ===============配置信息=================
+2018-08-24 15:14:33.042 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-24 15:14:33.043 [INFO ] - commondSource:E:/a/server.zip
+2018-08-24 15:14:33.043 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-24 15:14:33.043 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-24 15:14:33.043 [INFO ] - ===============配置信息=================
+2018-08-24 15:14:37.963 [INFO ] - command:cd /data/webapps/ddlhyy_android;sh serverState.sh;,result:,127
+2018-08-24 15:14:38.017 [INFO ] - command:cd /data/webapps/ddlhyy_android;sh serverState.sh;,result:,127
+2018-08-24 15:14:38.322 [INFO ] - command:cd /data/webapps/ddlhyy_android;sh serverState.sh;,result:,null
+2018-08-24 15:15:45.564 [INFO ] - ===============配置信息=================
+2018-08-24 15:15:45.567 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-24 15:15:45.567 [INFO ] - commondSource:E:/a/server.zip
+2018-08-24 15:15:45.568 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-24 15:15:45.568 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-24 15:15:45.569 [INFO ] - ===============配置信息=================
+2018-08-24 15:15:49.480 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-24 15:15:49.561 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,127
+2018-08-24 15:15:49.905 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0
+2018-08-24 15:16:46.409 [INFO ] - ===============配置信息=================
+2018-08-24 15:16:46.412 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-24 15:16:46.412 [INFO ] - commondSource:E:/a/server.zip
+2018-08-24 15:16:46.412 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-24 15:16:46.412 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-24 15:16:46.413 [INFO ] - ===============配置信息=================
+2018-08-24 15:16:49.604 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-24 15:16:49.671 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,127
+2018-08-24 15:16:50.003 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0

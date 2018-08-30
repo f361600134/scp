@@ -22,6 +22,7 @@ public class ScpConstant {
 
 	public static String downloadDir = "download";
 	public static String commonRemoteDir = "";
+	public static String commonRemoteBasePath = "";
 	public static File uploadFile;
 	/**
 	 * key: serverid value: ScpInfo

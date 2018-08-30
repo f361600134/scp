@@ -26,7 +26,8 @@ public class ScpAssist {
 	public static Connection getConn(ScpInfo scpInfo) {
 		Connection conn = new Connection(scpInfo.getIp(), scpInfo.getPort());
 		try {
-			conn.connect();
+			// conn.connect();
+			conn.connect(null, 1000, 1000);
 			boolean isAuthenticated = conn.authenticateWithPassword(scpInfo.getUsername(), scpInfo.getPassword());
 			if (isAuthenticated == false) {
 				ScpLog.error("authentication failed, scpInfo:{}", scpInfo);

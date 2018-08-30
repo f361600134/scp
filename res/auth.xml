@@ -6,7 +6,7 @@
 	上传的目标路径
 	 -->
 	<common>
-		<source>E:/a/server.zip</source>
+		<source></source>
 		<commonRemoteDir>/data/webapps/ddlhyy_android/newer/</commonRemoteDir>
 	</common>
 	
@@ -38,6 +38,7 @@
 		<remoteDir></remoteDir>
 		<servers> 
 			<server>/data/webapps/ddlhyy_android/morningGlory_s2/</server>
+			<server>/data/webapps/ddlhyy_android/morningGlory_s97/</server>
 		</servers>
 	</scp>
 	
