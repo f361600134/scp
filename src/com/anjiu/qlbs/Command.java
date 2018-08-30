@@ -119,4 +119,13 @@ public class Command {
 		return "find " + name + ";";
 	}
 
+	/**
+	 * 查找文件是否存在
+	 * 
+	 * @param command
+	 * @return
+	 */
+	public static String rm(String... names) {
+		return "rm -rf " + names + ";";
+	}
 }

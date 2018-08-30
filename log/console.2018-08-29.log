@@ -1,0 +1,50 @@
+2018-08-29 14:07:38.807 [INFO ] - ===============配置信息=================
+2018-08-29 14:07:38.810 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-29 14:07:38.810 [INFO ] - commondSource:upload
+2018-08-29 14:07:38.810 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-29 14:07:38.811 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-29 14:07:38.811 [INFO ] - ===============配置信息=================
+2018-08-29 14:08:17.941 [INFO ] - ===============配置信息=================
+2018-08-29 14:08:17.944 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-29 14:08:17.944 [INFO ] - commondSource:upload
+2018-08-29 14:08:17.944 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s97/]]]]}
+2018-08-29 14:08:17.945 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-29 14:08:17.945 [INFO ] - ===============配置信息=================
+2018-08-29 14:08:23.373 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-29 14:08:23.467 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:08:28.633 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0
+2018-08-29 14:08:28.700 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127
+2018-08-29 14:08:43.842 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-29 14:08:43.937 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:08:44.251 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,null
+2018-08-29 14:08:44.319 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127
+2018-08-29 14:08:52.962 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-29 14:08:53.056 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:08:53.373 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,null
+2018-08-29 14:08:53.440 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127
+2018-08-29 14:08:57.313 [INFO ] - command:cd /data/webapps/ddlhyy_android/newer/;zip -r log.zip ../morningGlory_s1/start.log ../morningGlory_s3/start.log  ;,result:,0
+2018-08-29 14:08:57.437 [INFO ] - 源文件 remote:/data/webapps/ddlhyy_android/newer//log.zip, 目标文件 localDir:download
+2018-08-29 14:08:57.863 [INFO ] - command:cd /data/webapps/ddlhyy_android/newer/;zip -r log.zip ../morningGlory_s2/start.log ../morningGlory_s97/start.log  ;,result:,0
+2018-08-29 14:08:57.954 [INFO ] - 源文件 remote:/data/webapps/ddlhyy_android/newer//log.zip, 目标文件 localDir:download
+2018-08-29 14:09:04.591 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-29 14:09:04.685 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:09:05.013 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0
+2018-08-29 14:09:05.081 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127
+2018-08-29 14:09:17.023 [INFO ] - ===============配置信息=================
+2018-08-29 14:09:17.026 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-29 14:09:17.026 [INFO ] - commondSource:upload
+2018-08-29 14:09:17.026 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s97/]]]]}
+2018-08-29 14:09:17.026 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-29 14:09:17.027 [INFO ] - ===============配置信息=================
+2018-08-29 14:09:26.008 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-29 14:09:26.098 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:09:31.243 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0
+2018-08-29 14:09:31.293 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127
+2018-08-29 14:09:52.387 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,null
+2018-08-29 14:09:52.445 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:09:57.601 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0
+2018-08-29 14:09:57.656 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127
+2018-08-29 14:10:03.722 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s1/;sh serverState.sh;,result:,0
+2018-08-29 14:10:03.794 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s3/;sh serverState.sh;,result:,0
+2018-08-29 14:10:04.120 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s2/;sh serverState.sh;,result:,0
+2018-08-29 14:10:04.189 [INFO ] - command:cd /data/webapps/ddlhyy_android/morningGlory_s97/;sh serverState.sh;,result:,127

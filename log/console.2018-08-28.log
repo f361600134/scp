@@ -1,0 +1,19 @@
+2018-08-28 22:21:04.118 [INFO ] - ===============配置信息=================
+2018-08-28 22:21:04.121 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-28 22:21:04.121 [INFO ] - commondSource:E:/a/server.zip
+2018-08-28 22:21:04.121 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-28 22:21:04.122 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-28 22:21:04.122 [INFO ] - ===============配置信息=================
+2018-08-28 22:21:04.122 [ERROR] - uploadFile is null, exit the system.
+2018-08-28 22:21:20.906 [INFO ] - ===============配置信息=================
+2018-08-28 22:21:20.912 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-28 22:21:20.912 [INFO ] - commondSource:E:/a/server.zip
+2018-08-28 22:21:20.912 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-28 22:21:20.912 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-28 22:21:20.913 [INFO ] - ===============配置信息=================
+2018-08-28 22:22:37.380 [INFO ] - ===============配置信息=================
+2018-08-28 22:22:37.383 [INFO ] - commondSource:/data/webapps/ddlhyy_android/newer/
+2018-08-28 22:22:37.384 [INFO ] - commondSource:upload
+2018-08-28 22:22:37.384 [INFO ] - scpInfoMap:{s97=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]], s139=[ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s1/], ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s3/]]], ScpInfo [ip=192.168.6.139, port:20089, username=root, serverInfos:[ServerInfo [serverPath=/data/webapps/ddlhyy_android/morningGlory_s2/]]]]}
+2018-08-28 22:22:37.384 [INFO ] - scpInfoMap:[s97, s139]
+2018-08-28 22:22:37.385 [INFO ] - ===============配置信息=================

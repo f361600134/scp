@@ -165,7 +165,46 @@ public enum ScpOperate {
 				System.out.println(serverInfo + " 状态:" + result);
 			}
 		}
-	};
+	},
+	// deleteFile(9, "清除旧文件") {
+	// @Override
+	// public void exeCommand(ScpInfo scpInfo) {
+	// Connection conn = ScpAssist.getConn(scpInfo);
+	// String command = null;
+	// String serverDir = null;
+	// File file = null;
+	// File[] files = null;
+	// // String deleteNames
+	// for (ServerInfo serverInfo : scpInfo.getServerInfos()) {
+	// serverDir = serverInfo.getServerDir();
+	// file = new File(serverDir);
+	// if (file.isDirectory()) {
+	// files = file.listFiles(new scpFileNameFilter(serverInfo.getServerName(),
+	// "zip"));
+	// // 文件数量小于3则跳过
+	// if (files.length < 3)
+	// continue;
+	// // 否则排序, 保留三个文件
+	// Arrays.sort(files, new scpFileSortFilter());
+	// int count = 0;
+	// for (File f : files) {
+	// if (count > 3) {
+	//
+	// }
+	// count++;
+	// }
+	// }
+	// // 组装命令
+	// command = Command.cd(serverInfo);
+	// // 获取为后缀的压缩包
+	//
+	// // 运行
+	// String result = ScpAssist.runCommand(conn, command);
+	// System.out.println(serverInfo + " 状态:" + result);
+	// }
+	// }
+	// }
+	;
 
 	private int type;
 	private String name;
