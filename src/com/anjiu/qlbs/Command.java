@@ -128,4 +128,14 @@ public class Command {
 	public static String rm(String... names) {
 		return "rm -rf " + names + ";";
 	}
+
+	/**
+	 * 执行sh命令, 并且输出日志
+	 * 
+	 * @param command
+	 * @return
+	 */
+	public static String shout(String name) {
+		return "sh " + name + " > start.log;";
+	}
 }

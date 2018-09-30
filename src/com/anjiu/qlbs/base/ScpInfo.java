@@ -79,20 +79,20 @@ public class ScpInfo {
 		this.serverName = serverName;
 	}
 
-	public ScpInfo(String serverId, String serverName, String IP, int port, String username, String passward) {
+	public ScpInfo(String serverId, String serverName, String IP, int port, String username, String password) {
 		this.serverId = serverId;
 		this.serverName = serverName;
 		this.ip = IP;
 		this.port = port;
 		this.username = username;
-		this.password = passward;
+		this.password = password;
 	}
 
-	public ScpInfo(String IP, int port, String username, String passward) {
-		this.ip = IP;
+	public ScpInfo(String ip, int port, String username, String password) {
+		this.ip = ip;
 		this.port = port;
 		this.username = username;
-		this.password = passward;
+		this.password = password;
 	}
 
 	public ScpInfo(String ip, int port, String username, String password, String remoteDir) {
@@ -103,13 +103,13 @@ public class ScpInfo {
 		this.remoteDir = remoteDir;
 	}
 
-	public ScpInfo(String serverId, String serverName, String IP, int port, String username, String passward, String remoteDir) {
+	public ScpInfo(String serverId, String serverName, String IP, int port, String username, String password, String remoteDir) {
 		this.serverId = serverId;
 		this.serverName = serverName;
 		this.ip = IP;
 		this.port = port;
 		this.username = username;
-		this.password = passward;
+		this.password = password;
 		this.remoteDir = remoteDir;
 	}
 

@@ -222,6 +222,14 @@ public enum ScpOperate {
 		return name;
 	}
 
+	public String success() {
+		return getName() + "成功";
+	}
+
+	public String failed() {
+		return getName() + "失败";
+	}
+
 	public static ScpOperate getScpType(int type) {
 		for (ScpOperate scpType : values()) {
 			if (scpType.type == type) {
