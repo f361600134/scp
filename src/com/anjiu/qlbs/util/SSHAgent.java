@@ -23,6 +23,8 @@ import ch.ethz.ssh2.StreamGobbler;
  * 
  * 可以考虑以后取代项目中的scp
  * 
+ * 线程池无法关闭, 线程池关闭后, 进程无法关闭
+ * 
  * @see http://www.programcreek.com/java-api-examples/index.php?api=ch.ethz.ssh2
  *      .SCPClient
  *
