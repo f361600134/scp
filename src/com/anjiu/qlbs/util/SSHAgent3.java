@@ -12,8 +12,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.IOUtils;
-
 import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.Session;
 import ch.ethz.ssh2.StreamGobbler;
@@ -25,12 +23,11 @@ import ch.ethz.ssh2.StreamGobbler;
  * 
  * 线程池无法关闭, 线程池关闭后, 进程无法关闭
  * 
- * @see http://www.programcreek.com/java-api-examples/index.php?api=ch.ethz.ssh2
- *      .SCPClient
+ * @see http://www.programcreek.com/java-api-examples/index.php?api=ch.ethz.ssh2.SCPClient
  *
  */
 
-public final class SSHAgent {
+public final class SSHAgent3 {
 
 	private Connection connection;
 	private Session session;
@@ -43,8 +40,8 @@ public final class SSHAgent {
 	// 用于输入数据
 	private final Scanner scanner = new Scanner(System.in);
 	private Queue<String> queue = new ConcurrentLinkedQueue<String>();
-
-	private static final int DEFAULT_SURVIVAL = 5; // seconds
+	
+	private static final int DEFAULT_SURVIVAL = 5; // minutes
 	private long startTime; // ms
 	private int survivalTime;// ms
 	
@@ -138,7 +135,7 @@ public final class SSHAgent {
 						System.out.println("connection timed out, close the connection");
 						stop();
 						print();
-						close();
+						//close();
 					}
 				}
 			}
@@ -171,16 +168,25 @@ public final class SSHAgent {
 	 * @date 2018年9月30日上午11:45:25
 	 */
 	public void close() {
-		// 关闭线程池
-		service.shutdown();
 		// 关闭IO
-		IOUtils.closeQuietly(stdout);
-		IOUtils.closeQuietly(stderr);
-		IOUtils.closeQuietly(printWriter);
-		IOUtils.closeQuietly(scanner);
+//		IOUtils.closeQuietly(stdout);
+//		IOUtils.closeQuietly(stderr);
+//		IOUtils.closeQuietly(printWriter);
+//		IOUtils.closeQuietly(scanner);
 		// 关闭ssh连接
 		session.close();
 		connection.close();
+		try {
+			stdout.close();
+			stderr.close();
+			printWriter.close();
+			scanner.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// 关闭线程池
+		service.shutdownNow();
 	}
 
 	public void print() {
@@ -192,7 +198,7 @@ public final class SSHAgent {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		SSHAgent sshAgent = new SSHAgent();
+		SSHAgent3 sshAgent = new SSHAgent3();
 		String ip = "192.168.1.106";
 		// int port = 22;
 		String username = "root";
